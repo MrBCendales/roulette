@@ -1,4 +1,4 @@
-const ListArea = ({ optionsArray, onRemove }) => {
+const OptionsList = ({ optionsArray, onRemove }) => {
   return (
     <div className="options-list">
       {optionsArray.map((option, index) => (
@@ -11,4 +11,4 @@ const ListArea = ({ optionsArray, onRemove }) => {
   );
 };
 
-export default ListArea;
+export default OptionsList;

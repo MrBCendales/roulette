@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const InputText = ({ onAddOption }) => {
+const TextInput = ({ onAddOption }) => {
   const [inputValue, setInputValue] = useState("");
 
   const handleAddOption = () => {
@@ -14,9 +14,10 @@ const InputText = ({ onAddOption }) => {
   return (
     <div>
       <input
-        type="text"
+        type="nameOption"
         value={inputValue}
         onChange={(e) => setInputValue(e.target.value)}
+        onKeyDown={(e) => e.key === "Enter" && handleAddOption()}
         placeholder="Enter an option."
       />
       <button onClick={handleAddOption}>Add Option</button>
@@ -24,4 +25,4 @@ const InputText = ({ onAddOption }) => {
   );
 };
 
-export default InputText;
+export default TextInput;
