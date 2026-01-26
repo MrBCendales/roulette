@@ -23,6 +23,7 @@
     left: 50%;
     transform-origin: 0 100%;
     background-color: lightcoral;
+    clip-path: polygon(0 0, 100% 0, 0 100%);
   }
 
   button {
