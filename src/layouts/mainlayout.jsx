@@ -1,11 +1,15 @@
 import Navigation from "../routes/navigation/navigation.component";
 import { Outlet } from "react-router-dom";
 
+import "./mainlayout.styles.scss";
+
 const MainLayout = () => {
   return (
     <>
       <Navigation />
-      <Outlet /> {/* Pages render here */}
+      <main className="main-content">
+        <Outlet />
+      </main>
     </>
   );
 };

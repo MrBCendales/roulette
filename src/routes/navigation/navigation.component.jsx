@@ -1,18 +1,25 @@
+import { Link } from "react-router-dom";
+import { Fragment } from "react/jsx-runtime";
+
+import "./navigation.styles.scss";
+
 const Navigation = () => {
   return (
-    <nav>
-      <ul>
-        <li>
-          <a href="/">Home</a>
-        </li>
-        <li>
-          <a href="/roulette">Roulette</a>
-        </li>
-        <li>
-          <a href="/dice">Dice</a>
-        </li>
-      </ul>
-    </nav>
+    <Fragment>
+      <div className="navigation-header">
+        <Link className="logo-container" to="/">
+          Home
+        </Link>
+        <div className="link-container">
+          <Link className="nav-link" to="/roulette">
+            Roulette
+          </Link>
+          <Link className="nav-link" to="/dice">
+            Dice
+          </Link>
+        </div>
+      </div>
+    </Fragment>
   );
 };
 

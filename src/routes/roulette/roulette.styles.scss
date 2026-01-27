@@ -1,0 +1,13 @@
+.roulette-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  .left-panel,
+  .right-panel {
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+  }
+}

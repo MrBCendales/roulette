@@ -3,7 +3,7 @@ const OptionsList = ({ optionsArray, onRemove }) => {
     <div className="options-list">
       {optionsArray.map((option, index) => (
         <div key={index} className="option-item">
-          <span>{option}</span>
+          <span>{option.option}</span>
           {onRemove && <button onClick={() => onRemove(index)}>X</button>}
         </div>
       ))}
