@@ -1,13 +1,49 @@
 .roulette-container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  justify-content: center;
+  grid-template-columns: 30% 70%; // 30% left, 70% right
+  gap: 2rem;
   padding: 20px;
-  .left-panel,
+  height: auto; // Full viewport height minus navbar
+
+  .left-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    height: 100%; // Take full height of container
+
+    // OptionsList takes 90% of left panel height
+    .options-list {
+      flex: 9; // 90% of available space
+
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 20px;
+      height: 100%;
+      overflow-y: Scroll;
+      border: 1px solid #e0e0e0;
+      border-radius: 12px;
+      padding: 2rem;
+      background: white;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    // TextInput takes 10% of left panel height
+    > div:last-child {
+      // Targets TextInput wrapper
+      flex: 1; // 10% of available space
+    }
+  }
+
   .right-panel {
-    padding: 20px;
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 2rem;
+    height: 100%;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   }
 }

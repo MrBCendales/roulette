@@ -48,44 +48,41 @@ const Roulette = () => {
   };
 
   return (
-    <div>
-      <h1>Roulette Game</h1>
-      <div className="roulette-container">
-        <div className="left-panel">
-          <TextInput onAddOption={handleAddOptionToList} />
-          <OptionsList
-            optionsArray={optionsArray}
-            onRemove={handleRemoveOptionFromList}
+    <div className="roulette-container">
+      <div className="left-panel">
+        <OptionsList
+          optionsArray={optionsArray}
+          onRemove={handleRemoveOptionFromList}
+        />
+        <TextInput onAddOption={handleAddOptionToList} />
+      </div>
+      <div className="right-panel">
+        {/* Only show wheel if there are options */}
+        {optionsArray.length > 0 && (
+          <Wheel
+            mustStartSpinning={isSpinning}
+            prizeNumber={winningOption}
+            data={optionsArray}
+            backgroundColors={["green", "#df3428", "yellow", "blue", "Pink"]}
+            textColors={["#ffffff"]}
+            innerBorderWidth={2}
+            onStopSpinning={() => {
+              setIsSpinning(false);
+              setShowWinner(true);
+            }}
           />
-        </div>
-        <div className="right-panel">
-          {/* Only show wheel if there are options */}
-          {optionsArray.length > 0 && (
-            <Wheel
-              mustStartSpinning={isSpinning}
-              prizeNumber={winningOption}
-              data={optionsArray}
-              backgroundColors={["#3e3e3e", "#df3428"]}
-              textColors={["#ffffff"]}
-              innerBorderWidth={2}
-              onStopSpinning={() => {
-                setIsSpinning(false);
-                setShowWinner(true);
-              }}
-            />
-          )}
+        )}
 
-          <button onClick={handleSpin}>SPIN</button>
-          {!isSpinning && showWinner && (
-            <WinnerDisplay
-              winner={
-                winningOption !== null && optionsArray[winningOption]
-                  ? optionsArray[winningOption].option
-                  : null
-              }
-            />
-          )}
-        </div>
+        <button onClick={handleSpin}>SPIN</button>
+        {!isSpinning && showWinner && (
+          <WinnerDisplay
+            winner={
+              winningOption !== null && optionsArray[winningOption]
+                ? optionsArray[winningOption].option
+                : null
+            }
+          />
+        )}
       </div>
     </div>
   );

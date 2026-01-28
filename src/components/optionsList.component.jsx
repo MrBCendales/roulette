@@ -1,3 +1,5 @@
+import "./styles/optionsList.styles.scss";
+
 const OptionsList = ({ optionsArray, onRemove }) => {
   return (
     <div className="options-list">
