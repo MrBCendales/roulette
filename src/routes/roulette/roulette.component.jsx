@@ -7,10 +7,10 @@ import TextInput from "../../components/inputText.component";
 import WinnerDisplay from "../../components/winnerDisplay.component";
 
 import "./roulette.styles.scss";
-import gradientStarter from "../../images/gradient_starter.png";
-import gradientBronze from "../../images/gradient_bronze.png";
-import gradientGold from "../../images/gradient_gold.png";
-import gradientBright from "../../images/gradient_bright.png";
+// import gradientStarter from "../../images/gradient_starter.png";
+// import gradientBronze from "../../images/gradient_bronze.png";
+// import gradientGold from "../../images/gradient_gold.png";
+// import gradientBright from "../../images/gradient_bright.png";
 
 const generateWinningNumber = (optionsObject) => {
   const randomNumber = Math.random();
@@ -49,7 +49,7 @@ const Roulette = () => {
         ...optionsArray,
         {
           option: optionInput,
-          image: { uri: gradientStarter },
+          style: { backgroundColor: backgroundColors[colorIndex] },
         },
       ]);
     }
@@ -79,7 +79,7 @@ const Roulette = () => {
         />
         <TextInput onAddOption={handleAddOptionToList} />
       </div>
-      <div className="right-panel">
+      <div className="right-panel" onClick={!isSpinning ? handleSpin : null}>
         {/* Only show wheel if there are options */}
         {optionsArray.length > 0 && (
           <Wheel
@@ -87,15 +87,15 @@ const Roulette = () => {
             prizeNumber={winningOption}
             data={optionsArray}
             textColors={["#ffffff"]}
-            innerBorderWidth={2}
+            innerBorderColor={"white"}
+            outerBorderColor={"gray"}
+            innerBorderWidth={50}
             onStopSpinning={() => {
               setIsSpinning(false);
               setShowWinner(true);
             }}
           />
         )}
-
-        <button onClick={handleSpin}>SPIN</button>
         {!isSpinning && showWinner && (
           <WinnerDisplay
             winner={

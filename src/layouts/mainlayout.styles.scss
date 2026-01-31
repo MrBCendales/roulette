@@ -1,9 +1,9 @@
 .main-content {
-  padding-top: 80px; // Account for fixed navbar
+  padding-top: 10px; // Account for fixed navbar
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   padding-bottom: 2rem;
-  min-height: 100vh;
+  max-height: 100vh;
 
   // Responsive
   @media (min-width: 768px) {

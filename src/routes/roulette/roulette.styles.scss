@@ -1,36 +1,66 @@
+$accent: #ffb300;
+$hover-bg: rgba(146, 151, 246, 0.1);
+$text-color: #0b3d2e;
+
 .roulette-container {
   display: grid;
   grid-template-columns: 30% 70%; // 30% left, 70% right
   gap: 2rem;
   padding: 20px;
-  height: auto; // Full viewport height minus navbar
+  padding-top: 15vh;
+  height: 75vh; // Full viewport height minus some offset for navbar
 
   .left-panel {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.5rem;
     height: 100%; // Take full height of container
 
     // OptionsList takes 90% of left panel height
     .options-list {
       flex: 9; // 90% of available space
-
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-      gap: 20px;
+      display: flex; // Change from grid to flex
+      flex-wrap: wrap; // Allow wrapping to next line
+      gap: 10px;
       height: 100%;
       overflow-y: Scroll;
-      border: 1px solid #e0e0e0;
-      border-radius: 12px;
+      border: 2px solid #e0e0e0;
+      border-radius: 50px;
       padding: 2rem;
       background: white;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      align-content: flex-start; // Items start at top, not stretched
     }
 
     // TextInput takes 10% of left panel height
     > div:last-child {
       // Targets TextInput wrapper
-      flex: 1; // 10% of available space
+      flex: 1;
+      max-width: 100%;
+      position: relative;
+      input {
+        box-sizing: border-box;
+        background: rgb(240, 255, 243);
+        border: 2px solid #ccc;
+        border-radius: 50px;
+        padding: 1rem 2rem;
+        width: 100%;
+        font-size: 1rem;
+      }
+      button {
+        background: white;
+        border-radius: 50%;
+        height: 80%;
+        aspect-ratio: 1 / 1;
+        position: absolute;
+        right: 0;
+        top: 10%;
+        transform: translateX(-10%);
+        cursor: pointer;
+        &:hover {
+          background-color: $hover-bg;
+        }
+      }
     }
   }
 
@@ -42,7 +72,7 @@
     gap: 2rem;
     height: 100%;
     border: 1px solid #e0e0e0;
-    border-radius: 12px;
+    border-radius: 50px;
     background: white;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   }

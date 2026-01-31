@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import { ReactComponent as AddIcon } from "../images/add-button.svg";
+
 const TextInput = ({ onAddOption }) => {
   const [inputValue, setInputValue] = useState("");
 
@@ -16,11 +18,14 @@ const TextInput = ({ onAddOption }) => {
       <input
         type="nameOption"
         value={inputValue}
+        maxLength={10}
         onChange={(e) => setInputValue(e.target.value)}
         onKeyDown={(e) => e.key === "Enter" && handleAddOption()}
         placeholder="Enter an option."
       />
-      <button onClick={handleAddOption}>Add Option</button>
+      <button onClick={handleAddOption}>
+        <AddIcon style={{ width: "28px", height: "28px" }} />
+      </button>
     </div>
   );
 };
