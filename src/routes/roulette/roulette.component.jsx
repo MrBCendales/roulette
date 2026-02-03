@@ -61,11 +61,18 @@ const Roulette = () => {
     setOptionsArray(newOptionsArray);
   };
 
+  const handleEditOptionInList = (index, newValue) => {
+    const newOptionsArray = [...optionsArray];
+    newOptionsArray[index] = { ...newOptionsArray[index], option: newValue };
+    setOptionsArray(newOptionsArray);
+  };
+
   const handleSpin = () => {
     if (optionsArray.length === 0) {
       alert("Add some options first!");
       return;
     }
+    setShowWinner(false);
     setIsSpinning(true);
     const winningNumber = generateWinningNumber(optionsArray);
     setWinningOption(winningNumber);
@@ -73,10 +80,14 @@ const Roulette = () => {
 
   return (
     <div className="roulette-container">
-      <div className="left-panel">
+      <div
+        className="left-panel"
+        style={{ pointerEvents: isSpinning ? "none" : "auto" }}
+      >
         <OptionsList
           optionsArray={optionsArray}
           onRemove={handleRemoveOptionFromList}
+          onEdit={handleEditOptionInList}
         />
         <TextInput onAddOption={handleAddOptionToList} />
       </div>

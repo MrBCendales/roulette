@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import { ReactComponent as AddIcon } from "../images/add-button.svg";
 
-const TextInput = ({ onAddOption }) => {
+const TextInput = ({ onAddOption, disabled }) => {
   const [inputValue, setInputValue] = useState("");
 
   const handleAddOption = () => {
@@ -17,6 +17,7 @@ const TextInput = ({ onAddOption }) => {
     <div>
       <input
         type="nameOption"
+        disabled={disabled}
         value={inputValue}
         maxLength={10}
         onChange={(e) => setInputValue(e.target.value)}

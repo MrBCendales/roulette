@@ -1,1 +1,44 @@
+.option-item {
+  width: calc(40%); // 3 per row
+  background: linear-gradient(to right, #2d5016, #a8c5a0); // Option B gradient
+  border-radius: 12px; // rounded but not too pill-shaped
+  padding: 0.6rem 0.8rem; // some breathing room
+  display: flex; // text on left, buttons on right
+  align-items: center; // vertically centered
+  gap: 0.5rem; // space between text and buttons
 
+  span {
+    color: white; // text color
+    flex: 1; // takes remaining space, pushes buttons to the right
+    font-size: 0.9rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  input {
+    background: transparent; // no background, gradient shows through
+    border: none; // remove the default blue border
+    outline: none; // remove focus outline
+    color: white; // white text like the span
+    font-size: 0.9rem; // same size as the span
+    width: 100%; // takes all available space
+    caret-color: white; // makes the cursor white too
+  }
+
+  .edit-btn,
+  .delete-btn {
+    background: none; // no button background
+    border: none; // no border
+    cursor: pointer;
+    padding: 2px; // small padding so icons aren't too tight
+  }
+
+  .edit-btn {
+    color: white;
+  }
+
+  .delete-btn {
+    color: #e74c3c;
+  }
+}
