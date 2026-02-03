@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { useState } from "react";
 import { Wheel } from "react-custom-roulette";
 
@@ -109,13 +109,16 @@ const Roulette = () => {
           />
         )}
         {!isSpinning && showWinner && (
-          <WinnerDisplay
-            winner={
-              winningOption !== null && optionsArray[winningOption]
-                ? optionsArray[winningOption].option
-                : null
-            }
-          />
+          <Fragment>
+            <div className="overlay" onClick={() => setShowWinner(false)} />
+            <WinnerDisplay
+              winner={
+                winningOption !== null && optionsArray[winningOption]
+                  ? optionsArray[winningOption].option
+                  : null
+              }
+            />
+          </Fragment>
         )}
       </div>
     </div>

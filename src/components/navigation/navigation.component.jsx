@@ -19,8 +19,11 @@ const Navigation = () => {
           <Link className="nav-link" to="/roulette">
             Roulette
           </Link>
-          <Link className="nav-link" to="/dice">
-            Dice
+          <Link className="nav-link" to="/payment-reminder">
+            Payment Reminder
+          </Link>
+          <Link className="simple-kitchen" to="/simple-kitchen">
+            Simple Kitchen
           </Link>
         </div>
       </div>
