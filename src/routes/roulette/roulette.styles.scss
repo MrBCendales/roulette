@@ -16,14 +16,14 @@ $text-color: #0b3d2e;
     gap: 1.5rem;
     height: 100%; // Take full height of container
 
-    // OptionsList takes 90% of left panel height
     .options-list {
       flex: 9; // 90% of available space
-      display: flex; // Change from grid to flex
-      flex-wrap: wrap; // Allow wrapping to next line
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      max-height: 60vh;
       gap: 10px;
-      height: 100%;
-      overflow-y: Scroll;
+      overflow-y: scroll;
       border: 2px solid #e0e0e0;
       border-radius: 50px;
       padding: 2rem;
@@ -65,6 +65,7 @@ $text-color: #0b3d2e;
   }
 
   .right-panel {
+    position: relative; // for positioning winner display
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -75,5 +76,22 @@ $text-color: #0b3d2e;
     border-radius: 50px;
     background: white;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  }
+
+  .winner-display {
+    position: absolute; // floats on top of the wheel
+    z-index: 10; // makes sure it's above the wheel
+    background: rgba(255, 255, 255, 0.95); // slightly transparent white
+    border: 3px solid $accent; // gold border using your accent color
+    border-radius: 16px; // rounded corners
+    padding: 5rem 12rem; // breathing room
+    text-align: center; // centers the text
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); // nice shadow to pop out
+
+    h2 {
+      margin: 0 0 0.5rem;
+      color: $text-color; // your dark green
+      font-size: 1.2rem;
+    }
   }
 }
