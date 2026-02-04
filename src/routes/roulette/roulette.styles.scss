@@ -9,19 +9,27 @@ $text-color: #0b3d2e;
   padding: 20px;
   padding-top: 15vh;
   height: 75vh; // Full viewport height minus some offset for navbar
-
   .left-panel {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
     height: 100%; // Take full height of container
 
+    @media (max-width: 768px) {
+      position: relative; // ← only on mobile
+      gap: 0;
+      height: 35vh; // let content determine height
+    }
     .options-list {
       flex: 9; // 90% of available space
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       max-height: 60vh;
+      @media (max-width: 768px) {
+        max-height: 25vh; // shorter on mobile so wheel gets more space
+        padding-bottom: 5rem; // space for floating input
+      }
       gap: 10px;
       overflow-y: scroll;
       border: 2px solid #e0e0e0;
@@ -38,6 +46,17 @@ $text-color: #0b3d2e;
       flex: 1;
       max-width: 100%;
       position: relative;
+
+      @media (max-width: 768px) {
+        position: absolute; // ← float only on mobile
+        bottom: 5%;
+        left: 0;
+        right: 0;
+        z-index: 10;
+        max-width: 90%;
+        margin: 0 auto;
+      }
+
       input {
         box-sizing: border-box;
         background: rgb(240, 255, 243);
@@ -76,22 +95,33 @@ $text-color: #0b3d2e;
     border-radius: 50px;
     background: white;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+
+    @media (max-width: 768px) {
+      position: relative;
+      height: 45vh;
+    }
+
+    .dark-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 50px;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 5; // below winner display
+    }
+    .wheel-container {
+      cursor: pointer;
+    }
   }
 
-  .winner-display {
-    position: absolute; // floats on top of the wheel
-    z-index: 10; // makes sure it's above the wheel
-    background: rgba(255, 255, 255, 0.95); // slightly transparent white
-    border: 3px solid $accent; // gold border using your accent color
-    border-radius: 16px; // rounded corners
-    padding: 5rem 12rem; // breathing room
-    text-align: center; // centers the text
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); // nice shadow to pop out
-
-    h2 {
-      margin: 0 0 0.5rem;
-      color: $text-color; // your dark green
-      font-size: 1.2rem;
-    }
+  // When screen is 768px or smaller (tablet/mobile)
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr; // single column, full width
+    grid-template-rows: auto auto; // two rows
+    height: auto; // let content determine height
+    gap: 1rem;
+    padding-top: 13vh; // less top padding on mobile
   }
 }

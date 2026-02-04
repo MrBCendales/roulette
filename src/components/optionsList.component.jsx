@@ -7,6 +7,15 @@ const OptionsList = ({ optionsArray, onRemove, onEdit }) => {
   const [editingIndex, setEditingIndex] = useState(null);
   const [tempEditValue, setTempEditValue] = useState("");
 
+  // If no options, show empty state
+  if (optionsArray.length === 0) {
+    return (
+      <div className="options-list empty">
+        <p className="empty-message">Add some names to get started!</p>
+      </div>
+    );
+  }
+
   return (
     <div className="options-list">
       {optionsArray.map((option, index) => (

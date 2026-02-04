@@ -1,11 +1,23 @@
 .option-item {
-  width: calc(40%); // 3 per row
+  width: calc(40%);
+  @media (max-width: 768px) {
+    width: 90%; // 1 per row on mobile, full width
+    border-radius: 50%;
+  }
   background: linear-gradient(to right, #2d5016, #a8c5a0); // Option B gradient
   border-radius: 12px; // rounded but not too pill-shaped
   padding: 0.6rem 0.8rem; // some breathing room
   display: flex; // text on left, buttons on right
   align-items: center; // vertically centered
   gap: 0.5rem; // space between text and buttons
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease; // smooth animation
+
+  &:hover {
+    transform: translateY(-2px); // lifts up slightly
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); // adds a shadow
+  }
 
   span {
     color: white; // text color
@@ -40,5 +52,17 @@
 
   .delete-btn {
     color: #e74c3c;
+  }
+
+  &.empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .empty-message {
+      color: #999;
+      font-size: 1.2rem;
+      text-align: center;
+    }
   }
 }

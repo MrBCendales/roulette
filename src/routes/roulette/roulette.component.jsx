@@ -59,12 +59,20 @@ const Roulette = () => {
   const handleRemoveOptionFromList = (index) => {
     const newOptionsArray = optionsArray.filter((_, i) => i !== index);
     setOptionsArray(newOptionsArray);
+    //When erasing the winner, close the winner display
+    if (showWinner && index === winningOption) {
+      setShowWinner(false);
+    }
   };
 
   const handleEditOptionInList = (index, newValue) => {
     const newOptionsArray = [...optionsArray];
     newOptionsArray[index] = { ...newOptionsArray[index], option: newValue };
     setOptionsArray(newOptionsArray);
+  };
+
+  const handleCloseWinnerDisplay = () => {
+    setShowWinner(false);
   };
 
   const handleSpin = () => {
@@ -91,27 +99,35 @@ const Roulette = () => {
         />
         <TextInput onAddOption={handleAddOptionToList} />
       </div>
-      <div className="right-panel" onClick={!isSpinning ? handleSpin : null}>
+      <div className="right-panel">
         {/* Only show wheel if there are options */}
         {optionsArray.length > 0 && (
-          <Wheel
-            mustStartSpinning={isSpinning}
-            prizeNumber={winningOption}
-            data={optionsArray}
-            textColors={["#ffffff"]}
-            innerBorderColor={"white"}
-            outerBorderColor={"gray"}
-            innerBorderWidth={50}
-            onStopSpinning={() => {
-              setIsSpinning(false);
-              setShowWinner(true);
-            }}
-          />
+          <div
+            className="wheel-container"
+            onClick={!isSpinning ? handleSpin : null}
+          >
+            <Wheel
+              mustStartSpinning={isSpinning}
+              prizeNumber={winningOption}
+              data={optionsArray}
+              textColors={["#ffffff"]}
+              innerBorderColor={"white"}
+              outerBorderColor={"gray"}
+              innerBorderWidth={50}
+              onStopSpinning={() => {
+                setIsSpinning(false);
+                setShowWinner(true);
+              }}
+            />
+          </div>
         )}
         {!isSpinning && showWinner && (
           <Fragment>
-            <div className="overlay" onClick={() => setShowWinner(false)} />
+            <div className="dark-overlay" onClick={handleCloseWinnerDisplay} />
             <WinnerDisplay
+              onClose={handleCloseWinnerDisplay}
+              onRemove={handleRemoveOptionFromList}
+              winnerIndex={winningOption}
               winner={
                 winningOption !== null && optionsArray[winningOption]
                   ? optionsArray[winningOption].option

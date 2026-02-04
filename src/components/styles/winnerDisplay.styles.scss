@@ -1,0 +1,89 @@
+$accent: #ffb300;
+$hover-bg: rgba(146, 151, 246, 0.1);
+$text-color: #0b3d2e;
+
+.winner-display {
+  position: absolute; // floats on top of the wheel
+  z-index: 10; // makes sure it's above the wheel
+  background: rgba(255, 255, 255, 0.95); // slightly transparent white
+  border: 3px solid $accent; // gold border using your accent color
+  border-radius: 16px; // rounded corners
+  padding: 2rem 8rem; // breathing room
+  text-align: center; // centers the text
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); // nice shadow to pop out
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+
+  h1.winner-text {
+    margin: 0;
+    background: linear-gradient(45deg, #ffd700, #ffa500);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 3.5rem;
+    font-weight: bold;
+    text-shadow: 0 0 20px rgba(255, 179, 0, 0.4);
+    animation: bounce 0.6s ease;
+  }
+  .winner-text-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  @keyframes bounce {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+      transform: translateY(10px);
+    }
+  }
+
+  .close-icon {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
+    color: #333; // darker so it stands out more
+
+    &:hover {
+      color: $accent;
+    }
+  }
+  .close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0.25rem;
+
+    svg {
+      color: #666;
+    }
+
+    &:hover svg {
+      color: $accent;
+    }
+  }
+  .remove-btn {
+    background: #423ce7; // red for remove action
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+
+    &:hover {
+      background: #c0392b; // darker red on hover
+    }
+  }
+}
