@@ -15,7 +15,8 @@ function App() {
         <Route path="/" element={<MainLayout />}>
           <Route index element={<HomePage />} />
           <Route path="roulette" element={<Roulette />} />
-          <Route path="dice" element={<SecondPage />} />
+          <Route path="payment-reminder" element={<SecondPage />} />
+          <Route path="simple-kitchen" element={<SecondPage />} />
         </Route>
         <Route path="/admin" element={<AdminLayout />}>
           <Route path="dashboard" element={<Dashboard />} />

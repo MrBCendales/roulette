@@ -26,6 +26,33 @@ $text-color: #222222;
     align-items: center;
   }
 
+  // Hamburger menu - hidden on desktop, visible on mobile
+  .hamburger-menu {
+    display: none; // hidden by default (desktop)
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin-top: 7%;
+    z-index: 1001;
+
+    span {
+      width: 100%;
+      height: 3px;
+      background: $text-color;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+    }
+
+    @media (max-width: 768px) {
+      display: flex; // show on mobile
+    }
+  }
+
   .link-container {
     height: 100%;
     display: flex;
@@ -33,7 +60,12 @@ $text-color: #222222;
     justify-content: flex-end;
     gap: 1rem;
 
-    .nav-link {
+    @media (max-width: 768px) {
+      display: none; // hide desktop links on mobile
+    }
+
+    .nav-link,
+    .simple-kitchen {
       padding: 10px 20px;
       color: $text-color;
       text-decoration: none;
@@ -43,17 +75,75 @@ $text-color: #222222;
       transition: all 0.3s ease;
       cursor: pointer;
       position: relative;
+
       &:hover {
         color: $accent;
         box-shadow: 0 0 20px rgba(255, 179, 0, 0.3);
       }
     }
   }
+
   .logo-icon {
     width: 60%;
     height: 60%;
     &:hover {
       fill: #4ecdc4;
+    }
+  }
+}
+
+// Overlay - darkens background when mobile menu is open
+.overlay {
+  display: none; // hidden on desktop
+
+  @media (max-width: 768px) {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+  }
+}
+
+// Mobile sidebar menu
+.mobile-menu {
+  display: none; // hidden on desktop
+
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: -100%; // starts off-screen to the left
+    width: 70%;
+    max-width: 300px;
+    height: 100%;
+    background: white;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    padding: 80px 20px 20px; // space for header
+    z-index: 1000;
+    transition: left 0.3s ease; // smooth slide animation
+    gap: 1rem;
+
+    &.open {
+      left: 0; // slides in when open
+    }
+
+    .mobile-nav-link {
+      padding: 15px 20px;
+      color: $text-color;
+      text-decoration: none;
+      font-weight: 500;
+      border-radius: 8px;
+      transition: background 0.2s ease;
+
+      &:hover {
+        background: $hover-bg;
+        color: $accent;
+      }
     }
   }
 }
