@@ -23,18 +23,21 @@ export const STRINGS_EN = {
       PROJECTS_DATA: [
         {
           TITLE: "Roulette",
+          ROUTE: "/roulette",
           DESCRIPTION:
             "An interactive spinning wheel to make random selections to play.",
           TECH: ["React", "SCSS"],
         },
         {
           TITLE: "Payment Reminder",
+          ROUTE: "/payment-reminder",
           DESCRIPTION:
             "A family-oriented economy manager to check your monthly payments and card subscriptions.",
           TECH: ["React", "SCSS"],
         },
         {
           TITLE: "Simple Kitchen",
+          ROUTE: "/simple-kitchen",
           DESCRIPTION:
             "Friendly, simple cooking manager for weekly recipes. Add prices and shopping lists to prepare before going to the mall.",
           TECH: ["React", "SCSS"],

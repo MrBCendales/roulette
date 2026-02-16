@@ -59,10 +59,7 @@ const HomePage = () => {
                     ))}
                   </div>
                 </div>
-                <Link
-                  to={`/${project.TITLE.toLowerCase().replace(/\s/g, "-")}`}
-                  className="project-button"
-                >
+                <Link to={project.ROUTE} className="project-button">
                   {STRINGS.PROJECTS.TRY_LIVE}
                 </Link>
               </div>
