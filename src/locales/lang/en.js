@@ -1,4 +1,4 @@
-export const EN = {
+export const STRINGS_EN = {
   HOME: {
     HERO: {
       TITLE: "Hi, I'm Bryan Cendales",
@@ -9,6 +9,13 @@ export const EN = {
     TECH_STACK: {
       TITLE: "Tech Stack",
       LEARNING: "Learning",
+      STACK: [
+        { NAME: "React", LEARNING: false },
+        { NAME: "JavaScript", LEARNING: false },
+        { NAME: "SCSS", LEARNING: false },
+        { NAME: "Python", LEARNING: true },
+        { NAME: "AWS", LEARNING: true },
+      ],
     },
     PROJECTS: {
       TITLE: "My Projects",

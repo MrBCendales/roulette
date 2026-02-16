@@ -1,10 +1,16 @@
 import { Link } from "react-router-dom";
-import { EN } from "../../locales/lang/en";
+import { STRINGS_EN } from "../../locales/lang/en";
 import "./homepage.styles.scss";
+import { useEffect } from "react";
 
 const HomePage = () => {
-  const STRINGS = EN.HOME; // 'T' for 'TEXTS'
+  const STRINGS = STRINGS_EN.HOME;
+  const TECH_PROJECTS = STRINGS.PROJECTS.PROJECTS_DATA;
+  const TECH_STACK = STRINGS.TECH_STACK.STACK;
 
+  useEffect(() => {
+    console.log(STRINGS.PROJECTS.PROJECTS_DATA);
+  }, []);
   return (
     <div className="home-page">
       {/* Hero Section */}
@@ -21,101 +27,46 @@ const HomePage = () => {
         <div className="section-container">
           <h2 className="section-title">{STRINGS.TECH_STACK.TITLE}</h2>
           <div className="tech-grid">
-            <div className="tech-card">
-              <span className="tech-name">React</span>
-            </div>
-            <div className="tech-card">
-              <span className="tech-name">JavaScript</span>
-            </div>
-            <div className="tech-card">
-              <span className="tech-name">SCSS</span>
-            </div>
-            <div className="tech-card">
-              <span className="tech-name">Python</span>
-              <span className="learning-badge">
-                {STRINGS.TECH_STACK.LEARNING}
-              </span>
-            </div>
-            <div className="tech-card">
-              <span className="tech-name">AWS</span>
-              <span className="learning-badge">
-                {STRINGS.TECH_STACK.LEARNING}
-              </span>
-            </div>
+            {TECH_STACK.map((tech, index) => (
+              <div key={index} className="tech-card">
+                <span className="tech-name">{tech.NAME}</span>
+                {tech.LEARNING && (
+                  <span className="learning-badge">
+                    {STRINGS.TECH_STACK.LEARNING}
+                  </span>
+                )}
+              </div>
+            ))}
           </div>
         </div>
       </section>
-
       {/* Projects Section */}
       <section className="projects-section">
         <div className="section-container">
           <h2 className="section-title">{STRINGS.PROJECTS.TITLE}</h2>
           <div className="projects-grid">
             {/* Roulette Project */}
-            <div className="project-card">
-              <div className="project-info">
-                <h3 className="project-title">
-                  {STRINGS.PROJECTS.PROJECTS_DATA[0].TITLE}
-                </h3>
-                <p className="project-description">
-                  {STRINGS.PROJECTS.PROJECTS_DATA[0].DESCRIPTION}
-                </p>
-                <div className="project-tech">
-                  {STRINGS.PROJECTS.PROJECTS_DATA[0].TECH.map((tech, index) => (
-                    <span key={index} className="tech-badge">
-                      {tech}
-                    </span>
-                  ))}
+            {TECH_PROJECTS.map((project, index) => (
+              <div key={index} className="project-card">
+                <div className="project-info">
+                  <h3 className="project-title">{project.TITLE}</h3>
+                  <p className="project-description">{project.DESCRIPTION}</p>
+                  <div className="project-tech">
+                    {project.TECH.map((tech, techIndex) => (
+                      <span key={techIndex} className="tech-badge">
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
                 </div>
+                <Link
+                  to={`/${project.TITLE.toLowerCase().replace(/\s/g, "-")}`}
+                  className="project-button"
+                >
+                  {STRINGS.PROJECTS.TRY_LIVE}
+                </Link>
               </div>
-              <Link to="/roulette" className="project-button">
-                {STRINGS.PROJECTS.TRY_LIVE}
-              </Link>
-            </div>
-
-            {/* Payment Reminder Project */}
-            <div className="project-card">
-              <div className="project-info">
-                <h3 className="project-title">
-                  {STRINGS.PROJECTS.PROJECTS_DATA[1].TITLE}
-                </h3>
-                <p className="project-description">
-                  {STRINGS.PROJECTS.PROJECTS_DATA[1].DESCRIPTION}
-                </p>
-                <div className="project-tech">
-                  {STRINGS.PROJECTS.PROJECTS_DATA[1].TECH.map((tech, index) => (
-                    <span key={index} className="tech-badge">
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
-              <Link to="/payment-reminder" className="project-button">
-                {STRINGS.PROJECTS.TRY_LIVE}
-              </Link>
-            </div>
-
-            {/* Simple Kitchen Project */}
-            <div className="project-card">
-              <div className="project-info">
-                <h3 className="project-title">
-                  {STRINGS.PROJECTS.PROJECTS_DATA[2].TITLE}
-                </h3>
-                <p className="project-description">
-                  {STRINGS.PROJECTS.PROJECTS_DATA[2].DESCRIPTION}
-                </p>
-                <div className="project-tech">
-                  {STRINGS.PROJECTS.PROJECTS_DATA[2].TECH.map((tech, index) => (
-                    <span key={index} className="tech-badge">
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
-              <Link to="/simple-kitchen" className="project-button">
-                {STRINGS.PROJECTS.TRY_LIVE}
-              </Link>
-            </div>
+            ))}
           </div>
         </div>
       </section>
