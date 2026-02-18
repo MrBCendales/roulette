@@ -73,7 +73,7 @@ const HomePage = () => {
               href={`mailto:${STRINGS.CONTACT.EMAIL}`}
               className="contact-button"
             >
-              📧 Email Me
+              {STRINGS.CONTACT.EMAIL_ME}
             </a>
             {STRINGS.CONTACT.LINKS.map((link, index) => (
               <a

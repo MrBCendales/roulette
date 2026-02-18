@@ -1,7 +1,7 @@
 export const STRINGS_EN = {
   HOME: {
     HERO: {
-      TITLE: "Hi, I'm Bryan Cendales",
+      TITLE: "Hi, Hello there! Nice to meet you!",
       SUBTITLE: "Full-Stack Developer",
       DESCRIPTION:
         "I'm a graduated electrical engineer who transitioned into full-stack development. I build interactive web applications with React and I'm expanding into Python and AWS.",
@@ -46,12 +46,16 @@ export const STRINGS_EN = {
     },
     CONTACT: {
       TITLE: "Let's Connect",
+      EMAIL_ME: "Email Me",
       DESCRIPTION:
         "I'm always open to new opportunities and collaborations. Feel free to reach out!",
-      EMAIL: "your.email@example.com", // ← Cambia esto con tu email real
+      EMAIL: "bn.cendales10@gmail.com",
       LINKS: [
-        { NAME: "GitHub", URL: "https://github.com/yourusername" }, // ← Cambia con tus links reales
-        { NAME: "LinkedIn", URL: "https://linkedin.com/in/yourusername" },
+        { NAME: "GitHub", URL: "https://github.com/MrBCendales" },
+        {
+          NAME: "LinkedIn",
+          URL: "https://www.linkedin.com/in/bryann-cendales/",
+        },
       ],
     },
     FOOTER: {

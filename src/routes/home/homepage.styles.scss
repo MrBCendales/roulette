@@ -60,7 +60,7 @@ $bg-light: #f5f7fa;
 
 // Tech Stack Section
 .tech-section {
-  padding: 5rem 2rem;
+  padding: 4rem 2rem;
   background: white;
 
   .section-container {
@@ -72,6 +72,7 @@ $bg-light: #f5f7fa;
     font-size: 2.5rem;
     text-align: center;
     margin-bottom: 3rem;
+    margin-top: 0;
     color: $text-color;
 
     @media (max-width: 768px) {
@@ -90,16 +91,10 @@ $bg-light: #f5f7fa;
       background: $bg-light;
       border: 2px solid #e0e0e0;
       border-radius: 12px;
-      padding: 1.5rem;
+      padding: 1rem;
       text-align: center;
       transition: all 0.3s ease;
       position: relative;
-
-      &:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-        border-color: $accent;
-      }
 
       .tech-name {
         font-size: 1.2rem;
