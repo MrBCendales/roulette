@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { ReactComponent as AddIcon } from "../images/add-button.svg";
+import { ReactComponent as AddIcon } from "../../../../assets/images/add-button.svg";
 
 const TextInput = ({ onAddOption, disabled }) => {
   const [inputValue, setInputValue] = useState("");

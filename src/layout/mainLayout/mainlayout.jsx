@@ -1,4 +1,4 @@
-import Header from "../components/navigation/navigation.component";
+import Header from "./components/header/header.component";
 import { Outlet } from "react-router-dom";
 import { Fragment } from "react/jsx-runtime";
 import Footer from "./components/footer/footer.component";

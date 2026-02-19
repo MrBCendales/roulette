@@ -2,9 +2,9 @@ import { Link } from "react-router-dom";
 import { Fragment } from "react/jsx-runtime";
 import { useState } from "react";
 
-import "./navigation.styles.scss";
-import { ReactComponent as HomeIcon } from "../../images/HomeIcon.svg";
-import NavigationBackground from "../../images/Background-header-nav.png";
+import "./header.styles.scss";
+import { ReactComponent as HomeIcon } from "../../../../assets/images/HomeIcon.svg";
+import NavigationBackground from "../../../../assets/images/Background-header-nav.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

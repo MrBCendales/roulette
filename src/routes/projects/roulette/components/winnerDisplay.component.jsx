@@ -1,7 +1,7 @@
 import "../styles/winnerDisplay.styles.scss";
 
-import { ReactComponent as CloseIcon } from "../images/icons/close-icon.svg";
-import HappyPepe from "../images/icons/Happy_pepe.png";
+import { ReactComponent as CloseIcon } from "../../../../assets/images/icons/close-icon.svg";
+import HappyPepe from "../../../../assets/images/icons/Happy_pepe.png";
 
 const WinnerDisplay = ({ winner, winnerIndex, onRemove, onClose }) => {
   if (!winner) return null;

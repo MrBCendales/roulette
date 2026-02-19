@@ -1,7 +1,7 @@
 import "../styles/optionsList.styles.scss";
 import { Fragment, useState } from "react";
-import { ReactComponent as EditIcon } from "../images/icons/edit-icon.svg";
-import { ReactComponent as DeleteIcon } from "../images/icons/trash-bin.svg";
+import { ReactComponent as EditIcon } from "../../../../assets/images/icons/edit-icon.svg";
+import { ReactComponent as DeleteIcon } from "../../../../assets/images/icons/trash-bin.svg";
 
 const OptionsList = ({ optionsArray, onRemove, onEdit }) => {
   const [editingIndex, setEditingIndex] = useState(null);
