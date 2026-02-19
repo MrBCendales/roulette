@@ -1,11 +1,11 @@
 import { Route, Routes } from "react-router-dom";
 
-import MainLayout from "./layouts/mainlayout";
-import SecondPage from "./routes/second-page/second-page.component";
-import AdminLayout from "./layouts/adminLayout.jsx";
-import Dashboard from "./routes/admin/dashboard.component";
-import Settings from "./routes/admin/settings.component";
-import HomePage from "./routes/home/homepage.component";
+import MainLayout from "./layout/mainlayout.jsx";
+import SecondPage from "../../src/routes/second-page/second-page.component.jsx";
+import AdminLayout from "./layout/adminLayout.jsx";
+import Dashboard from "./routes/admin/dashboard.component.jsx";
+import Settings from "./routes/admin/settings.component.jsx";
+import HomePage from "./components/home/homepage.component.jsx";
 import Roulette from "./routes/roulette/roulette.component";
 
 function App() {

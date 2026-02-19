@@ -1,4 +1,4 @@
-import "./styles/winnerDisplay.styles.scss";
+import "../styles/winnerDisplay.styles.scss";
 
 import { ReactComponent as CloseIcon } from "../images/icons/close-icon.svg";
 import HappyPepe from "../images/icons/Happy_pepe.png";

@@ -6,7 +6,7 @@ import "./navigation.styles.scss";
 import { ReactComponent as HomeIcon } from "../../images/HomeIcon.svg";
 import NavigationBackground from "../../images/Background-header-nav.png";
 
-const Navigation = () => {
+const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleToggleMenu = () => {
@@ -33,19 +33,6 @@ const Navigation = () => {
           <span></span>
           <span></span>
         </button>
-
-        {/* Desktop links - hidden on mobile */}
-        <div className="link-container desktop-only">
-          <Link className="nav-link" to="/roulette">
-            Roulette
-          </Link>
-          <Link className="nav-link" to="/payment-reminder">
-            Payment Reminder
-          </Link>
-          <Link className="simple-kitchen" to="/simple-kitchen">
-            Simple Kitchen
-          </Link>
-        </div>
       </div>
       {/* Overlay - darkens background when menu is open */}
       {isMenuOpen && <div className="overlay" onClick={handleCloseMenu} />}
@@ -78,4 +65,4 @@ const Navigation = () => {
   );
 };
 
-export default Navigation;
+export default Header;

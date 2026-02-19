@@ -1,4 +1,4 @@
-import "./styles/optionsList.styles.scss";
+import "../styles/optionsList.styles.scss";
 import { Fragment, useState } from "react";
 import { ReactComponent as EditIcon } from "../images/icons/edit-icon.svg";
 import { ReactComponent as DeleteIcon } from "../images/icons/trash-bin.svg";

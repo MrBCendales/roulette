@@ -2,9 +2,9 @@ import React, { Fragment } from "react";
 import { useState } from "react";
 import { Wheel } from "react-custom-roulette";
 
-import OptionsList from "../../components/optionsList.component";
-import TextInput from "../../components/inputText.component";
-import WinnerDisplay from "../../components/winnerDisplay.component";
+import OptionsList from "./components/optionsList.component";
+import TextInput from "./components/inputText.component";
+import WinnerDisplay from "./components/winnerDisplay.component";
 
 import "./roulette.styles.scss";
 // import gradientStarter from "../../images/gradient_starter.png";

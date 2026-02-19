@@ -1,4 +1,4 @@
-import { STRINGS_EN } from "../../locales/lang/en";
+import { STRINGS_EN } from "../../../../../../src/locales/lang/en";
 import "./footer.styles.scss";
 
 const Footer = () => {

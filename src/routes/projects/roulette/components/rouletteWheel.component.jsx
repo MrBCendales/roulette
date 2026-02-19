@@ -1,5 +1,4 @@
-import React from "react";
-import "./rouletteWheel.styles.scss";
+import "../styles/rouletteWheel.styles.scss";
 
 const RouletteWheel = ({ options, onSpin, isSpinning }) => {
   const colors = [

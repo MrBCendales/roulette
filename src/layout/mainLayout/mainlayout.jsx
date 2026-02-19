@@ -1,14 +1,14 @@
-import Navigation from "../components/navigation/navigation.component";
+import Header from "../components/navigation/navigation.component";
 import { Outlet } from "react-router-dom";
 import { Fragment } from "react/jsx-runtime";
-import Footer from "../components/footer/footer.component";
+import Footer from "./components/footer/footer.component";
 
 import "./mainlayout.styles.scss";
 
 const MainLayout = () => {
   return (
     <Fragment>
-      <Navigation />
+      <Header />
       <main className="main-content">
         <Outlet />
       </main>
