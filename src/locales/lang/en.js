@@ -6,6 +6,16 @@ export const STRINGS_EN = {
       DESCRIPTION:
         "I'm a graduated electrical engineer who transitioned into full-stack development. I build interactive web applications with React and I'm expanding into Python and AWS.",
     },
+    PROFILE: {
+      NAME: "Bryan Cendales",
+      PHOTO_URL: "/path-to-your-photo.jpg", // ← Update this with your photo path
+      SOCIAL_LINKS: [
+        { NAME: "GitHub", URL: "https://github.com/yourusername" },
+        { NAME: "LinkedIn", URL: "https://linkedin.com/in/yourusername" },
+        // Add more as needed
+      ],
+      SKILLS: ["React", "JavaScript", "SCSS", "Python", "AWS"],
+    },
     TECH_STACK: {
       TITLE: "Tech Stack",
       LEARNING: "Learning",
