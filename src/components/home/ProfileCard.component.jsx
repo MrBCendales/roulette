@@ -12,7 +12,19 @@ const ProfileCard = () => {
 
       <h3 className="profile-name">{STRINGS.NAME}</h3>
 
-      <div className="social-links">{STRINGS.SOCIAL_LINKS}</div>
+      <div className="social-links">
+        {STRINGS.SOCIAL_LINKS.map((link, index) => (
+          <a
+            key={index}
+            href={link.URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="social-link"
+          >
+            {link.NAME}
+          </a>
+        ))}
+      </div>
 
       <div className="skills-grid">
         {STRINGS.SKILLS.map((skill, index) => (
