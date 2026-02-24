@@ -1,5 +1,12 @@
 import { STRINGS_EN } from "../../locales/en";
+import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import "./ProfileCard.styles.scss";
+
+const iconMap = {
+  GitHub: <FaGithub />,
+  LinkedIn: <FaLinkedin />,
+  Email: <FaEnvelope />,
+};
 
 const ProfileCard = () => {
   const STRINGS = STRINGS_EN.HOME.PROFILE;
@@ -20,8 +27,9 @@ const ProfileCard = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="social-link"
+            aria-label={link.NAME}
           >
-            {link.NAME}
+            {iconMap[link.NAME]}
           </a>
         ))}
       </div>
