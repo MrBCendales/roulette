@@ -73,4 +73,16 @@ export const STRINGS_EN = {
       MADE_WITH: "Made with React & ❤️",
     },
   },
+  ROULETTE: {
+    TITLE: "Roulette",
+    DESCRIPTION:
+      "An interactive spinning wheel to make random selections to play.",
+    TECH: ["React", "SCSS"],
+  },
+  PAYMENT_REMINDER: {
+    TITLE: "Payment Reminder",
+    DESCRIPTION:
+      "A family-oriented economy manager to check your monthly payments and card subscriptions.",
+    TECH: ["React", "SCSS"],
+  },
 };
